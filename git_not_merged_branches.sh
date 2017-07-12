@@ -1,7 +1,8 @@
 
 #cleans output from git
 clean() {
-             cut -c 3- |  sed 's:^remotes/::' | sed 's:^origin/::' | grep -v  '^master$' | grep -v '^HEAD';
+     cut -c 3- |  sed 's:^remotes/::' | sed 's:^origin/::' \
+     | grep -v  '^master$' | grep -v '^HEAD' ;
         }
 
 # Gets you all the branch that contain the latest tag
