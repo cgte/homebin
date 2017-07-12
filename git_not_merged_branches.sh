@@ -14,6 +14,6 @@ g() { git branch -a --no-merged 'master' ; }
 # Takes common parts since it g can ouput very old divreged branches.
 # and f may give you branches that are already berged in master
 
-comm -12 <( f | clean | sort ) <(g | clean | sort)
+comm -12 <( f | clean | sort -u ) <( g | clean | sort -u )
 
 
