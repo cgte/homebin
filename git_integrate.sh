@@ -52,7 +52,10 @@ git push
 # Rebase on top of it
 
 git checkout $to_rebase
+git pull --rebase $to_rebase #Those tw lins may seem overkill
+git push -u
 git rebase master $to_rebase
+
 
 #sync with remote branch
 
