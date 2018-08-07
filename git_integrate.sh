@@ -3,10 +3,10 @@
 # git integrate branch_name
 # git integrate # if branch_name is checked out
 
-# updated master branch, rebase your branch on it and push it to remote
+# updates master branch, rebase your branch on it and push it to remote
 # once synced merge it in master without fast forwaring and push it to remote master.
 
-# This avoid overlapping in the graph like
+# This avoids overlapping in the graph like
 
 # * - * - - * - -*
 #  \   \   /    /
@@ -38,12 +38,12 @@ fi
 
 if [ "$to_rebase" == "master" ];
 then
-    echo "Can you need to specify a branch or check it out"
+    echo "Can you specify a branch or check it out"
     exit 1
 fi
 
 
-# Sync master and push i back
+# Sync master and push it back
 
 git checkout master
 git pull --rebase
@@ -57,6 +57,9 @@ git rebase master $to_rebase
 #sync with remote branch
 
 git push -u -f
+
+# Merge into master
+
 git checkout master
 
 git merge --no-ff $to_rebase
